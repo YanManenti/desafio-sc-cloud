@@ -1,26 +1,23 @@
-def primeCheck(valor, inicial=2):
-    if valor == inicial:
-        return True
-    if valor % inicial == 0:
-        return False
-    return primeCheck(valor, inicial+1)
-
-def primoRecursivo(valor):
-    resultado = []
-    if valor < 2:
+def primoRecursivo(valorFinal, valorAtual=2, resultado=None):
+    if resultado is None:
+        resultado = []
+    if valorAtual > valorFinal:
         return resultado
 
-    resultado = primoRecursivo(valor-1)
+    primoFlag = True
+    for primo in resultado:
+        if valorAtual % primo == 0:
+            primoFlag = False
+            break
 
-    if primeCheck(valor):
-        resultado.append(valor)
+    if primoFlag:
+        resultado.append(valorAtual)
 
-    return resultado
-
+    return primoRecursivo(valorFinal, valorAtual+1, resultado)
 
 def primoLinear(valor):
     if valor < 1:
-        return "Número menor ou igual a 1"
+        return []
 
     resultado = []
     for numero in range(2, valor):

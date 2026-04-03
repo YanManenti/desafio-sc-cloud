@@ -30,3 +30,5 @@ while escolha != 5:
             print(Primo.primoRecursivo(valorFinal))
         case 5:
             exit()
+
+    input("Pressione Enter para continuar...")
