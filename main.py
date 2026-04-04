@@ -1,6 +1,12 @@
 import Fibonacci
 import Primo
 
+def readNumberErrHandling(text, errortext):
+    try:
+        return int(input(text))
+    except ValueError:
+        print(errortext)
+
 escolha = -1
 while escolha != 5:
     print(f"Opções:\n"
@@ -10,23 +16,20 @@ while escolha != 5:
         f"  4. Primo Recursivo\n"
         f"  5. Sair")
 
-    try:
-        escolha = int(input("Escolha uma opção: "))
-    except ValueError:
-        print("Erro ao ler sua opção, insira um numero inteiro")
-
+    errorText = "Erro ao ler sua opção, insira apenas um numero inteiro"
+    escolha = readNumberErrHandling("Escolha uma opção: ",errorText)
     match escolha:
         case 1:
-            posicaoFinal = int(input("Qual a posição escolhida: "))
+            posicaoFinal = readNumberErrHandling("Qual a posição escolhida: ",errorText)
             print(Fibonacci.fibonacciLinear(posicaoFinal))
         case 2:
-            posicaoFinal = int(input("Qual a posição escolhida: "))
+            posicaoFinal = readNumberErrHandling("Qual a posição escolhida: ",errorText)
             print(Fibonacci.fibonacciRecursiva(posicaoFinal))
         case 3:
-            valorFinal = int(input("Qual o valor final escolhido: "))
+            valorFinal = readNumberErrHandling("Qual o valor final escolhido: ",errorText)
             print(Primo.primoLinear(valorFinal))
         case 4:
-            valorFinal = int(input("Qual o valor final escolhido: "))
+            valorFinal = readNumberErrHandling("Qual o valor final escolhido: ",errorText)
             print(Primo.primoRecursivo(valorFinal))
         case 5:
             exit()
