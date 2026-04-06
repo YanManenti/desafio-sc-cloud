@@ -2,12 +2,13 @@
 # Essa função é recursiva e uma a função auxiliar "primoCheck", também recursiva, para calcular os primos.
 # Difere da função pedida, pois são duas funções, entretanto é mais organizada.
 def primoRecursivo(valorFinal, valorAtual=2, resultado=None):
+    if resultado is None or resultado == 0:
+        resultado = []
     if valorFinal < 2:
         return "Valor inválido"
-    if resultado is None:
-        resultado = []
     if valorAtual > valorFinal:
         return resultado
+
 
     if primoCheck(valorAtual):
         resultado.append(valorAtual)
@@ -25,10 +26,10 @@ def primoCheck(valor, inicial=2):
 
 
 def primoLinear(valorFinal):
+    if valorFinal is None:
+        return "Valor inexistente"
     if valorFinal < 2:
         return "Valor inválido"
-    if valorFinal <= 1:
-        return []
 
     resultado = []
     for numero in range(2, valorFinal+1):
