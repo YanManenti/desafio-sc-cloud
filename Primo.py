@@ -4,8 +4,9 @@
 def primoRecursivo(valorFinal, valorAtual=2, resultado=None):
     if resultado is None or resultado == 0:
         resultado = []
-    if valorFinal < 2:
-        return "Valor inválido"
+    if valorFinal is None or valorFinal < 2:
+        print("Valor inválido.")
+        return []
     if valorAtual > valorFinal:
         return resultado
 
@@ -30,16 +31,17 @@ def recursivoPrimoCheck(valor, inicial=2):
 
 def primoLinear(valorFinal):
     if valorFinal is None:
-        return "Valor inexistente"
+        return "Valor inexistente."
     if valorFinal < 2:
-        return "Valor inválido"
+        print("Valor inválido.")
+        return []
 
     resultado = []
     for numero in range(2, valorFinal+1):
         if linearPrimoCheck(numero):
             resultado.append(numero)
 
-    return resultado
+    return resultado if len(resultado) else None
 
 def linearPrimoCheck(numero):
     primoFlag = True

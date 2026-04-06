@@ -1,6 +1,6 @@
 def fibonacciRecursiva(posicaoFinal):
-    if posicaoFinal < 0:
-        return "Posição negativa"
+    if posicaoFinal is None or posicaoFinal < 0:
+        return "Posição inválida."
 
     if posicaoFinal == 0 or posicaoFinal == 1:
         return posicaoFinal
@@ -9,8 +9,8 @@ def fibonacciRecursiva(posicaoFinal):
 
 
 def fibonacciLinear(posicaoFinal):
-    if posicaoFinal < 0:
-        return "Posição negativa"
+    if posicaoFinal is None or posicaoFinal < 0:
+        return "Posição inválida."
 
     resultado = [0, 1]
     for numero in range(1,posicaoFinal):
