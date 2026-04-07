@@ -17,7 +17,7 @@ escolha = -1
 while escolha != 5:
     print(f"Opções:\n"
         f"  1. Fibonacci Linear\n"
-        f"  2. Fibonacci Recursivo\n"
+        f"  2. Fibonacci Recursivo (Esta função é bem lenta, use no máximo ~35)\n"
         f"  3. Primo Linear\n"
         f"  4. Primo Recursivo\n"
         f"  5. Sair")
